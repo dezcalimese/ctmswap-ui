@@ -11,7 +11,7 @@ const TOKEN_LIST = [
   {
     symbol: "MAGIC",
     name: "MAGIC",
-    image: "/img/tokens/magic.png",
+    image: "/img/cointinuum-logo.jpeg",
   },
   {
     symbol: "ELM",
@@ -39,7 +39,7 @@ export const normalizeToken = ({
     id,
     symbol,
     isEth: symbol === "ETH" || symbol === "WETH",
-    isMagic: symbol === "MAGIC",
+    isMagic: symbol === "CTM",
     name,
     image: TOKEN_LIST.find((token) => token.symbol === symbol)?.image,
     decimals: parseInt(decimals),

@@ -47,7 +47,7 @@ export default function TokenInput({
       <label htmlFor={id} className="sr-only">
         {label}
       </label>
-      <div className="relative focus-within:border-ruby-600">
+      <div className="relative focus-within:border-violet-600">
         <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center space-x-2 pl-3 pb-4">
           {!!token && (
             <TokenLogo
@@ -63,7 +63,7 @@ export default function TokenInput({
         <input
           id={id}
           type="text"
-          className="block w-full rounded-md border-0 bg-night-900 pl-7 pb-6 text-right focus:outline-none focus:ring-2 focus:ring-ruby-600 sm:text-lg lg:text-2xl"
+          className="block w-full rounded-md border-0 bg-night-900 pl-7 pb-6 text-right focus:outline-none focus:ring-2 focus:ring-violet-600 sm:text-lg lg:text-2xl"
           placeholder="0.00"
           value={value === "0" ? "" : value}
           onChange={handleChange}

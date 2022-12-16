@@ -32,7 +32,7 @@ export const PopoverContent = ({ children, className }: Props) => (
         <>
           {children}
           <button
-            className="absolute top-3.5 right-3.5 inline-flex items-center justify-center rounded-full p-1 focus:outline-none focus-visible:ring focus-visible:ring-ruby-500 focus-visible:ring-opacity-75"
+            className="absolute top-3.5 right-3.5 inline-flex items-center justify-center rounded-full p-1 focus:outline-none focus-visible:ring focus-visible:ring-violet-500 focus-visible:ring-opacity-75"
             onClick={() => close()}
           >
             <XIcon className="h-4 w-4 text-night-500 hover:text-night-400" />

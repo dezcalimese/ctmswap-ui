@@ -21,7 +21,7 @@ import { chain, createClient, configureChains, WagmiConfig } from "wagmi";
 import rainbowStyles from "@rainbow-me/rainbowkit/styles.css";
 import {
   ConnectButton,
-  darkTheme,
+  midnightTheme,
   getDefaultWallets,
   RainbowKitProvider,
 } from "@rainbow-me/rainbowkit";
@@ -39,6 +39,7 @@ import {
   TwitterIcon,
   DiscordIcon,
   GitHubIcon,
+  HomePageIcon,
 } from "./components/Icons";
 
 import NProgress from "nprogress";
@@ -56,12 +57,13 @@ import {
 import { createMetaTags } from "./utils/meta";
 import { twMerge } from "tailwind-merge";
 import type { Optional } from "./types";
+import Logo from "../public/img/ctm-logo.png";
 
 type LoaderData = {
   nodeEnv: typeof process.env.NODE_ENV;
   enableTestnets: boolean;
   alchemyKey: Optional<string>;
-  treasureRpcKey: Optional<string>;
+  // treasureRpcKey: Optional<string>;
 };
 
 export const links: LinksFunction = () => [
@@ -88,19 +90,19 @@ export const links: LinksFunction = () => [
     href: "/img/favicon-16x16.png",
   },
   { rel: "manifest", href: "/site.webmanifest" },
-  { rel: "mask-icon", href: "/img/safari-pinned-tab.svg", color: "#DC2626" },
+  { rel: "mask-icon", href: "/img/safari-pinned-tab.svg", color: "#774dea" },
   { rel: "shortcut icon", href: "/img/favicon.ico" },
 ];
 
 export const meta: MetaFunction = () => ({
-  ...createMetaTags("Swap | MagicSwap"),
+  ...createMetaTags("Swap | CTMSwap"),
   charset: "utf-8",
   viewport: "width=device-width,initial-scale=1",
-  "apple-mobile-web-app-title": "MagicSwap",
-  "application-name": "MagicSwap",
-  "msapplication-TileColor": "#DC2626",
+  "apple-mobile-web-app-title": "CTMSwap",
+  "application-name": "CTMSwap",
+  "msapplication-TileColor": "#774dea",
   "msapplication-config": "/browserconfig.xml",
-  "theme-color": "#DC2626",
+  "theme-color": "#774dea",
 });
 
 export const loader: LoaderFunction = async () => {
@@ -108,7 +110,7 @@ export const loader: LoaderFunction = async () => {
     nodeEnv: process.env.NODE_ENV,
     enableTestnets: process.env.ENABLE_TESTNETS === "true",
     alchemyKey: process.env.ALCHEMY_KEY,
-    treasureRpcKey: process.env.TREASURE_RPC_API_KEY,
+    // treasureRpcKey: process.env.TREASURE_RPC_API_KEY,
   });
 };
 
@@ -134,7 +136,7 @@ const NavLink = ({
               : "text-night-500 hover:bg-night-700/10 hover:text-night-500"
           )}
         >
-          <Icon className={twMerge("h-6 w-6", isActive && "fill-ruby-500")} />
+          <Icon className={twMerge("h-6 w-6", isActive && "fill-violet-500")} />
           <span>{children}</span>
         </div>
       )}
@@ -150,7 +152,7 @@ export default function App() {
   const { chains, provider } = React.useMemo(
     () =>
       configureChains(
-        [...(enableTestnets ? [chain.arbitrumGoerli] : []), chain.arbitrum],
+        [...(enableTestnets ? [chain.goerli] : []), chain.mainnet],
         [
           ...(treasureRpcKey
             ? [
@@ -217,16 +219,16 @@ export default function App() {
         <Links />
       </head>
       <body className="bg-night-900 text-white antialiased">
-        <div className="border-2 border-t border-ruby-900" />
+        <div className="border-2 border-t border-violet-600" />
         <WagmiConfig client={client}>
           <RainbowKitProvider
             appInfo={{
-              appName: "MagicSwap",
+              appName: "CTMSwap",
             }}
             chains={chains}
-            theme={darkTheme({
+            theme={midnightTheme({
               fontStack: "system",
-              accentColor: "#DC2626",
+              accentColor: "#8b5cf6",
               borderRadius: "large",
             })}
           >
@@ -238,13 +240,23 @@ export default function App() {
                       <div className="mr-auto hidden flex-1 items-center divide-x divide-night-800 sm:flex">
                         <a
                           className="px-3 text-night-500 transition-colors hover:text-white"
-                          href="https://twitter.com/MagicSwap_"
+                          href="https://cointinuum.org/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="Home Page"
+                        >
+                          <HomePageIcon className="h-7 w-7" />
+                        </a>
+                        <a
+                          className="px-3 text-night-500 transition-colors hover:text-white"
+                          href="https://twitter.com/CointinuumBRX"
                           target="_blank"
                           rel="noopener noreferrer"
                           title="Twitter"
                         >
                           <TwitterIcon className="h-6 w-6" />
                         </a>
+                        {/* Discord & GitHub Links if applicable 
                         <a
                           className="px-3 text-night-500 transition-colors hover:text-white"
                           href="http://discord.gg/treasuredao"
@@ -263,10 +275,15 @@ export default function App() {
                         >
                           <GitHubIcon className="h-6 w-6" />
                         </a>
+                        */}
                       </div>
                       <div className="flex flex-1 items-center sm:justify-center">
                         <Link to="/">
-                          <AMMIcon className="h-10 w-10 sm:h-14 sm:w-14" />
+                          <img
+                            className="h-20 w-20"
+                            src={Logo}
+                            alt="CTM Logo"
+                          />
                         </Link>
                       </div>
                       <div className="ml-auto flex flex-1 items-center justify-end">
@@ -289,7 +306,7 @@ export default function App() {
                         <div className="absolute left-1/2 z-10 w-full max-w-lg -translate-x-1/2 transform rounded-xl bg-night-800/40 p-2 shadow-2xl shadow-night-800/30 backdrop-blur-md 2xl:max-w-2xl">
                           <nav className="flex gap-1">
                             <NavLink to="/">Swap</NavLink>
-                            <NavLink to="pools">Pool</NavLink>
+                            <NavLink to="pools">Stake</NavLink>
                           </nav>
                         </div>
                       </div>
@@ -324,7 +341,7 @@ export default function App() {
                             );
                           case "error":
                             return (
-                              <ExclamationCircleIcon className="h-6 w-6 text-ruby-500" />
+                              <ExclamationCircleIcon className="h-6 w-6 text-violet-500" />
                             );
                           case "loading":
                             return (

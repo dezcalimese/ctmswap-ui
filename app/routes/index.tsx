@@ -56,12 +56,12 @@ export const meta: MetaFunction = ({ data, location }) => {
   const { inputToken, outputToken } = (data || {}) as LoaderData;
 
   if (!inputToken || !outputToken) {
-    return createMetaTags("404 | MagicSwap");
+    return createMetaTags("404 | CTMSwap");
   }
 
   if (location.search) {
     return createMetaTags(
-      `Swap ${inputToken.symbol} to ${outputToken.symbol} | MagicSwap`
+      `Swap ${inputToken.symbol} to ${outputToken.symbol} | CTMSwap`
     );
   }
 
@@ -203,7 +203,7 @@ export default function Index() {
           Swap {inputPairToken.symbol} to {outputPairToken.symbol}
         </h2>
         <p className="text-sm text-night-500 sm:text-base">
-          The gateway to the cross-game economy
+          The gateway to the Cointinuum ecosystem
         </p>
         <div className="z-10 mt-4 w-full rounded-xl bg-night-700/10 p-4 shadow-glass backdrop-blur-md sm:mt-8">
           <div className="flex justify-end">
@@ -245,8 +245,8 @@ export default function Index() {
                           checked={showGraph}
                           onChange={setShowGraph}
                           className={cn(
-                            showGraph ? "bg-ruby-900" : "bg-night-400",
-                            "relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-ruby-500 focus:ring-offset-2"
+                            showGraph ? "bg-violet-900" : "bg-night-400",
+                            "relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
                           )}
                         >
                           <span
@@ -634,7 +634,7 @@ const TokenSelectionModal = ({
                     isDisabled
                       ? "pointer-events-none opacity-20"
                       : "hover:bg-night-800/40",
-                    "relative flex items-center space-x-3 px-6 py-5 transition duration-150 ease-in-out focus-within:ring-2 focus-within:ring-inset focus-within:ring-ruby-500"
+                    "relative flex items-center space-x-3 px-6 py-5 transition duration-150 ease-in-out focus-within:ring-2 focus-within:ring-inset focus-within:ring-violet-500"
                   )}
                 >
                   <div className="flex-shrink-0">

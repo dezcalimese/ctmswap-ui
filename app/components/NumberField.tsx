@@ -31,7 +31,7 @@ export const NumberField = ({
             ref={inputRef}
             className={twMerge(
               sanitizedValue > 49
-                ? "focus:border-ruby-500 focus:ring-ruby-500"
+                ? "focus:border-violet-500 focus:ring-violet-500"
                 : "focus:border-night-500 focus:ring-night-500",
               "block w-full rounded-md bg-night-800/60 text-sm focus:border-night-500"
             )}
@@ -41,7 +41,7 @@ export const NumberField = ({
         </div>
       </div>
       {props.errorMessage && errorCondition(sanitizedValue) ? (
-        <p className="mt-2 text-sm text-ruby-600">{props.errorMessage}</p>
+        <p className="mt-2 text-sm text-violet-500">{props.errorMessage}</p>
       ) : null}
     </>
   );

@@ -64,7 +64,7 @@ export default function PairTokenInput({
           <label htmlFor={id} className="sr-only">
             {label}
           </label>
-          <div className="relative focus-within:border-ruby-600">
+          <div className="relative focus-within:border-violet-600">
             <input
               id={id}
               type="text"
@@ -137,7 +137,7 @@ export default function PairTokenInput({
                 className={twMerge(
                   "flex items-baseline text-[0.5rem] font-semibold sm:ml-1 sm:text-xs",
                   {
-                    "text-ruby-900": !positive,
+                    "text-violet-900": !positive,
                     "text-green-600": positive,
                   }
                 )}
@@ -149,7 +149,7 @@ export default function PairTokenInput({
                   />
                 ) : (
                   <ArrowSmDownIcon
-                    className="h-3 w-3 flex-shrink-0 self-center text-ruby-500 sm:h-4 sm:w-4"
+                    className="h-3 w-3 flex-shrink-0 self-center text-violet-500 sm:h-4 sm:w-4"
                     aria-hidden="true"
                   />
                 )}

@@ -3,8 +3,8 @@ import { chainId, useNetwork } from "wagmi";
 export const useChainId = () => {
   const { chain } = useNetwork();
   if (!chain) {
-    return chainId.arbitrum;
+    return chainId.goerli;
   }
 
-  return chain.unsupported ? chainId.arbitrum : chain.id;
+  return chain.unsupported ? chainId.goerli : chain.id;
 };

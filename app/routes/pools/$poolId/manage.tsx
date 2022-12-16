@@ -81,7 +81,7 @@ export default function Manage() {
                 to={`/pools/${params.poolId}/manage?tab=${tab.query}`}
                 className={twMerge(
                   isActive
-                    ? "border-ruby-500 bg-night-500/20 text-white"
+                    ? "border-violet-500 bg-night-500/20 text-white"
                     : "border-transparent text-night-500 hover:border-night-300 hover:text-night-700",
                   "flex-1 whitespace-nowrap border-t-2 py-3 px-4 text-center text-xs font-medium sm:flex-none sm:py-4 sm:px-8 sm:text-left sm:text-sm"
                 )}
@@ -264,7 +264,7 @@ const Liquidity = () => {
             <Switch
               checked={isAddLiquidity}
               onChange={setIsAddLiquidity}
-              className="group relative inline-flex h-5 w-10 flex-shrink-0 cursor-pointer items-center justify-center rounded-full ring-offset-night-800 focus:outline-none focus:ring-2 focus:ring-ruby-500 focus:ring-offset-2"
+              className="group relative inline-flex h-5 w-10 flex-shrink-0 cursor-pointer items-center justify-center rounded-full ring-offset-night-800 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
             >
               <span className="sr-only">
                 {isAddLiquidity ? "Remove Liquidity" : "Add Liquidity"}
@@ -276,7 +276,7 @@ const Liquidity = () => {
               <span
                 aria-hidden="true"
                 className={twMerge(
-                  isAddLiquidity ? "bg-ruby-900" : "bg-night-200",
+                  isAddLiquidity ? "bg-violet-900" : "bg-night-200",
                   "pointer-events-none absolute mx-auto h-2.5 w-8 rounded-full transition-colors duration-200 ease-in-out"
                 )}
               />
@@ -284,7 +284,7 @@ const Liquidity = () => {
                 aria-hidden="true"
                 className={twMerge(
                   isAddLiquidity ? "translate-x-5" : "translate-x-0",
-                  "pointer-events-none absolute left-0 inline-block h-4 w-4 transform rounded-full border border-ruby-700 bg-ruby-700 shadow ring-0 transition-transform duration-200 ease-in-out"
+                  "pointer-events-none absolute left-0 inline-block h-4 w-4 transform rounded-full border border-violet-700 bg-violet-700 shadow ring-0 transition-transform duration-200 ease-in-out"
                 )}
               />
             </Switch>
@@ -512,7 +512,7 @@ const Liquidity = () => {
 //           <Switch
 //             checked={isStake}
 //             onChange={setIsStake}
-//             className="group relative inline-flex h-5 w-10 flex-shrink-0 cursor-pointer items-center justify-center rounded-full ring-offset-night-800 focus:outline-none focus:ring-2 focus:ring-ruby-500 focus:ring-offset-2"
+//             className="group relative inline-flex h-5 w-10 flex-shrink-0 cursor-pointer items-center justify-center rounded-full ring-offset-night-800 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
 //           >
 //             <span className="sr-only">
 //               {isStake ? "Remove Liquidity" : "Add Liquidity"}
@@ -524,7 +524,7 @@ const Liquidity = () => {
 //             <span
 //               aria-hidden="true"
 //               className={twMerge(
-//                 isStake ? "bg-ruby-900" : "bg-night-200",
+//                 isStake ? "bg-violet-900" : "bg-night-200",
 //                 "pointer-events-none absolute mx-auto h-2.5 w-8 rounded-full transition-colors duration-200 ease-in-out"
 //               )}
 //             />

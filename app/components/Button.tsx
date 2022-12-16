@@ -36,9 +36,9 @@ export const Button = ({
   return (
     <button
       className={twMerge(
-        "inline-flex w-full items-center justify-center rounded-button border border-transparent bg-ruby-900 px-6.5 py-3 text-sm font-semibold text-white shadow-sm ring-offset-ruby-800 focus:outline-none focus:ring-2 focus:ring-ruby-500 focus:ring-offset-2 sm:text-lg",
+        "inline-flex w-full items-center justify-center rounded-button border border-transparent bg-violet-500 px-6.5 py-3 text-sm font-semibold text-white shadow-sm ring-offset-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 sm:text-lg",
         className,
-        isDisabled ? "opacity-50" : "hover:bg-ruby-1000"
+        isDisabled ? "opacity-50" : "hover:bg-violet-600"
       )}
       disabled={isDisabled}
       onClick={handleClick}

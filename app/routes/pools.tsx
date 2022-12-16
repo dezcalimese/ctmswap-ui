@@ -182,7 +182,7 @@ export default function Pools() {
                       prefetch="intent"
                       className={twMerge(
                         isActive
-                          ? "border-ruby-900 text-white"
+                          ? "border-violet-900 text-white"
                           : "border-transparent text-night-500 hover:border-night-600 hover:text-night-700",
                         notFirstTab && "ml-4",
                         "border-b-2 py-2 text-base font-medium sm:text-xl"
@@ -197,7 +197,7 @@ export default function Pools() {
           </ol>
         ) : null}
         <div className="relative col-span-6 mt-4 block xl:hidden">
-          <div className="group block rounded-md border border-night-800 bg-[#131D2E] p-4 focus-within:ring-2 focus-within:ring-ruby-500 focus-within:ring-offset-2 focus-within:ring-offset-night-100">
+          <div className="group block rounded-md border border-night-800 bg-[#131D2E] p-4 focus-within:ring-2 focus-within:ring-violet-500 focus-within:ring-offset-2 focus-within:ring-offset-night-100">
             {selectedPool ? (
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-4">
@@ -304,8 +304,8 @@ const PoolLink = ({ pair, lastPath }: { pair: Pair; lastPath: string }) => {
           className={twMerge(
             "group flex items-center border-l-2 px-6 py-5",
             isActive
-              ? "border-ruby-900 bg-ruby-500/10 text-ruby-600"
-              : "border-transparent hover:border-ruby-300"
+              ? "border-violet-900 bg-violet-500/10 text-violet-600"
+              : "border-transparent hover:border-violet-300"
           )}
         >
           <div className="flex w-full items-center justify-between">
@@ -326,14 +326,14 @@ const PoolLink = ({ pair, lastPath }: { pair: Pair; lastPath: string }) => {
                 className={twMerge(
                   "text-sm font-medium",
                   isActive
-                    ? "text-ruby-500"
+                    ? "text-violet-500"
                     : "text-night-400 group-hover:text-night-200"
                 )}
               >
                 {pair.name}
               </p>
             </div>
-            <p className={twMerge("font-bold", isActive && "text-ruby-500")}>
+            <p className={twMerge("font-bold", isActive && "text-violet-500")}>
               {formatPercent(pair.apy)}
             </p>
           </div>
